@@ -45,21 +45,19 @@ module.exports = {
       },
       shared: { react: { singleton: true }, 'react-dom': { singleton: true } },
     }),
-    // new UmdPlugin({
-    //   includeRemotes: ["react-router", "@remix-run/router"],
-    //   dependencies: {
-    //     automatic: ["remotes", "shareScopes"]
-    //   },
-    //   runtimeUmdExposes({ $umdValue, $moduleName }) {
-    //     $moduleName = $moduleName.replace(/^\.\/?/, "")
-    //     if ($moduleName) {
-    //       return $umdValue[$moduleName]
-    //     }
-    //     return $umdValue
-    //   },
-    // }),
-    // new UmdPlugin({
-    // }),
+    new UmdPlugin({
+      includeRemotes: ["react-router", "@remix-run/router"],
+      dependencies: {
+        automatic: ["remotes", "shareScopes"]
+      },
+      runtimeUmdExposes({ $umdValue, $moduleName }) {
+        $moduleName = $moduleName.replace(/^\.\/?/, "")
+        if ($moduleName) {
+          return $umdValue[$moduleName]
+        }
+        return $umdValue
+      },
+    }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
