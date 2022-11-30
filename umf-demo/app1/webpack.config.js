@@ -37,8 +37,8 @@ module.exports = {
       filename: 'remoteEntry.js',
       remotes: {
         app2: "app2@http://localhost:9002/remoteEntry.js",
-        "react-router": "app4reactRouter@https://unpkg.com/react-router@6.4.3/dist/umd/react-router.production.min.js",
-        "@remix-run/router": "app5remixRouter@https://unpkg.com/@remix-run/router@1.0.3/dist/router.umd.min.js"
+        "react-router": "app4reactRouter@https://cdn.jsdelivr.net/npm/react-router@6.4.3/dist/umd/react-router.production.min.js",
+        "@remix-run/router": "app5remixRouter@https://cdn.jsdelivr.net/npm/@remix-run/router@1.0.3/dist/router.umd.min.js"
       },
       exposes: {
         './App': './src/App.js',
