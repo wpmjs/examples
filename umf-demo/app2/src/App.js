@@ -1,9 +1,4 @@
 import React from "react";
-import ReactDom from "react-dom";
-import useRoutes from "react-router/useRoutes"
-import remixRunRouter from "@remix-run/router"
-console.log("useRoutes", useRoutes)
-console.log("@remix-run/router", remixRunRouter)
 import App1 from "mf-app-01/App"
 
 console.log("webpack5 sharescopes", __webpack_share_scopes__)

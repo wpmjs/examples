@@ -37,8 +37,6 @@ module.exports = {
       filename: 'remoteEntry.js',
       remotes: {
         app2: "app2@http://localhost:9002/remoteEntry.js",
-        "react-router": "app4reactRouter@https://cdn.jsdelivr.net/npm/react-router@6.4.3/dist/umd/react-router.production.min.js",
-        "@remix-run/router": "app5remixRouter@https://cdn.jsdelivr.net/npm/@remix-run/router@1.0.3/dist/router.umd.min.js"
       },
       exposes: {
         './App': './src/App.js',
@@ -46,16 +44,9 @@ module.exports = {
       shared: { react: { singleton: true }, 'react-dom': { singleton: true } },
     }),
     new UmdPlugin({
-      includeRemotes: ["react-router", "@remix-run/router"],
-      dependencies: {
-        automatic: ["remotes", "shareScopes"]
-      },
-      runtimeUmdExposes({ $umdValue, $moduleName }) {
-        $moduleName = $moduleName.replace(/^\.\/?/, "")
-        if ($moduleName) {
-          return $umdValue[$moduleName]
-        }
-        return $umdValue
+      remotes: {
+        "react-router": "app4reactRouter@https://cdn.jsdelivr.net/npm/react-router@6.4.3/dist/umd/react-router.production.min.js",
+        "@remix-run/router": "app5remixRouter@https://cdn.jsdelivr.net/npm/@remix-run/router@1.0.3/dist/router.umd.min.js"
       },
     }),
     new HtmlWebpackPlugin({

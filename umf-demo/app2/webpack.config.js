@@ -34,27 +34,21 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'app2',
       filename: 'remoteEntry.js',
-      remotes: {
-        "react-router": "app4reactRouter@https://cdn.jsdelivr.net/npm/react-router@6.4.3/dist/umd/react-router.production.min.js",
-        "@remix-run/router": "app5remixRouter@https://cdn.jsdelivr.net/npm/@remix-run/router@1.0.3/dist/router.umd.min.js",
-        "mf-app-01": "mfapp01@mf-app-01@1.0.2/dist/remoteEntry.js"
-      },
       exposes: {
         './App': './src/App.js',
       },
       shared: { react: { singleton: true }, 'react-dom': { singleton: true } },
     }),
-    new UmdPlugin({
-      includeRemotes: ["react-router", "@remix-run/router"],
-    }),
     new UniversalModuleFederationPlugin({
       // The matched remotes are loaded in umd mode
-      includeRemotes: ["mf-app-01"],
-      runtimeInject: {
+      remotes: {
+        "mf-app-01": "mfapp01@mf-app-01@1.0.2/dist/remoteEntry.js"
+      },
+      runtime: {
         resolvePath({name, version, entry, query}) {
           return `https://cdn.jsdelivr.net/npm/${name}@${version}/${entry}?${query}`
         },
-        async import(url, {name}) {
+        async import({url, name}) {
           await new Promise(resolve => {
             __webpack_require__.l(url, resolve)
           })

@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDom from "react-dom";
 import App2 from "app2/App"
-import useRoutes from "react-router/useRoutes"
-import remixRunRouter from "@remix-run/router"
-console.log("useRoutes", useRoutes)
+import * as router from "react-router"
+import * as remixRunRouter from "@remix-run/router"
+console.log("router", router)
 console.log("remixRunRouter", remixRunRouter)
 
 const App = () => {
