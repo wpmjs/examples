@@ -7,12 +7,12 @@
 <script>
 import UmiApp from 'umi/App'
 import {applyReactInVue} from "vuereact-combined"
+import "react"
 
 export default {
   name: 'App',
   components: {
     UmiApp: applyReactInVue(UmiApp),
-    // Button,
   }
 }
 </script>

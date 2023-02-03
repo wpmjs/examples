@@ -12,11 +12,10 @@ yarn
 yarn start
 ```
 
-`vueCli` and `umi`:
-
-- `vueCli`: http://localhost:9004
-- `umi`: http://localhost:9005
+- `vue-cli-host`: http://localhost:9004
+- `umi-remote`: http://localhost:9005
+- `vue-cli-remote`: http://localhost:9006
 
 Check out this link below for more examples:
 
-https://www.npmjs.com/package/mf-webpack4
+https://stackblitz.com/github/wpmjs/examples/tree/main/webpack4-module-federation/webpack4-vue-cli-umi-react
