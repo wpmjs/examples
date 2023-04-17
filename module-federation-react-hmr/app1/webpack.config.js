@@ -9,6 +9,7 @@ module.exports = {
   mode: 'development',
   devServer: {
     open: true,
+    allowedHosts: 'all',
     headers: {
       'Access-Control-Allow-Origin': '*',
     },

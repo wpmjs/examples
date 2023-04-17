@@ -3,13 +3,14 @@ const {ModuleFederationPlugin} = require('webpack').container
 const path = require('path');
 const {UmdPlugin} = require("universal-module-federation-plugin")
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-const SingleReactRefresh = require("single-react-refresh-plugin")
+// const SingleReactRefresh = require("single-react-refresh-plugin")
 
 module.exports = {
   entry: './src/index',
   mode: 'development',
   devServer: {
     hot: true,
+    allowedHosts: 'all',
     open: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
@@ -58,6 +59,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
-    new SingleReactRefresh(),
+    // new SingleReactRefresh(),
   ],
 };
