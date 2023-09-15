@@ -12,7 +12,8 @@
     "react": "17",
     "react-dom": "17",
     "vue": "2",
-    "vuereact-combined": "^1.2.6"
+    "vuereact-combined": "^1.2.6",
+    "webpack": "^4.46.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",
@@ -21,7 +22,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "mf-webpack4": "^1.0.24",
+    "mf-webpack4": "^1.4.4",
     "vue-template-compiler": "^2.6.11",
     "webpack-inject-plugin": "^1.5.5"
   },
