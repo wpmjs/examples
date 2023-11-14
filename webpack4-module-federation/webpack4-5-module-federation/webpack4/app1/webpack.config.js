@@ -11,7 +11,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    chunkFilename: "[name].js",
+    chunkFilename: "[name]-[chunkhash].js",
     path: `${__dirname}/dist`,
     publicPath: "http://localhost:9001/",
   },
