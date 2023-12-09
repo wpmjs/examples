@@ -1,7 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {ModuleFederationPlugin} = require('webpack').container
 const path = require('path');
-const {UmdPlugin} = require("universal-module-federation-plugin")
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 // const SingleReactRefresh = require("single-react-refresh-plugin")
 
@@ -49,12 +48,6 @@ module.exports = {
         './App': './src/App3.js',
       },
       shared: {react: { singleton: true }, 'react-dom': { singleton: true } },
-    }),
-    new UmdPlugin({
-      remotes: {
-        // app2: "app2@http://localhost:9002/main.js",
-        "@remix-run/router": "app5remixRouter@https://cdn.jsdelivr.net/npm/@remix-run/router@1.0.3/dist/router.umd.min.js",
-      }
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
